@@ -12,6 +12,7 @@ from wtforms import StringField, SubmitField, TextAreaField
 
 from wtforms.validators import DataRequired
 from flask_wtf.file import FileField, FileAllowed, FileRequired
+import scipy.ndimage.interpolation as interp
 
 SECRET_KEY = 'secret'
 app.config['SECRET_KEY'] = SECRET_KEY
@@ -62,7 +63,7 @@ def draw(filename,cho):
  plt.savefig(gr_path)
  plt.close()
  
- import scipy.ndimage.interpolation as interp
+ 
  #img = Image.rotate(input=img, angle=cho, axes=(0,1), reshape = False)
  
  img=img.rotate(cho)
